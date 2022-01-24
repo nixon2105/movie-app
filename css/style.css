@@ -38,6 +38,7 @@ body {
 
 .header-logo {
   cursor: pointer;
+  padding: 0 20px;
 }
 
 .header-search {
