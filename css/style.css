@@ -89,3 +89,35 @@ body {
   font-weight: 200;
   font-size: 40px;
 }
+
+.main {
+  height: calc(100vh - 200px);
+}
+
+.footer {
+  font-size: 20px;
+  background-color: rgba(35, 90, 192, 0.9);
+  height: 70px;
+}
+
+.footer-container {
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-data a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-logo {
+  width: 135px;
+  height: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('../img/rss.svg');
+  transition: 0.3s;
+  cursor: pointer;
+}
