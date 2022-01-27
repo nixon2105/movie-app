@@ -11,5 +11,3 @@ async function getMovie() {
   });
   // return data;
 }
-
-getMovie();
