@@ -44,6 +44,8 @@ body {
 }
 
 .header-search {
+  display: flex;
+  align-items: center;
   margin-top: 50px;
   transform: translate(-50%, -50%);
   background: #1a067c;
@@ -62,6 +64,8 @@ body {
 .header-search:hover > .search-btn {
   background: rgb(46, 168, 216);
 }
+.header-search:hover.clear-btn {
+}
 .search-btn {
   color: #fff;
   float: right;
@@ -73,6 +77,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+input:focus {
+  color: rgb(30, 212, 182);
+}
+
+.clear-btn {
+  color: rgba(180, 172, 172, 0.5);
+  margin-right: 6px;
+}
+
+.clear-btn:hover {
+  color: #d81414;
+  transition: ease all 0.3s;
 }
 
 .search-txt {
