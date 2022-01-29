@@ -11,6 +11,7 @@ const inputSearch = document.querySelector('.search-request');
 const btnSearch = document.querySelector('.search-btn');
 const clearSearch = document.querySelector('.clear-btn');
 const cards = document.querySelector('.cards');
+const cardItem = document.querySelector('.card-item');
 
 const createTemplate = (movieData) => {
   return `
@@ -37,11 +38,13 @@ const getMovie = async () => {
   const data = await response.json();
   const movieData = data.results;
   showMovie(movieData);
+  console.log(movieData);
 };
 
 getMovie();
 
 const showMovie = (movieData) => {
+  cards.innerHTML = '';
   movieData.slice(0, 8).map((element) => {
     cards.innerHTML += createTemplate(element);
   });
@@ -50,10 +53,27 @@ const showMovie = (movieData) => {
 btnSearch.addEventListener('click', (e) => {
   e.preventDefault();
 
-  const searchMovie = inputSearch.value;
-  console.log(searchMovie);
+  const value = inputSearch.value.trim();
+  console.log(value);
 
-  if (searchMovie) {
-    console.log(getMovie(URL_SEARCH + '&query=' + searchMovie));
+  if (value) {
+    getMovie(URL_SEARCH + '&query=' + value);
   }
+
+  inputSearch.value = '';
 });
+
+clearSearch.addEventListener('click', (e) => {
+  e.preventDefault();
+  inputSearch.value = '';
+});
+
+// searchForm.addEventListener('submit', event => {
+//   event.preventDefault();
+//   const value = searchFormInput.value.trim();
+//   if(value) {
+//       tvShows.append(loading);
+//       dbService.getSearchResult(value).then(renderCard);
+//   }
+//   searchFormInput.value = '';
+// })
