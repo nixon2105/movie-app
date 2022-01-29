@@ -33,15 +33,15 @@ const createTemplate = (movieData) => {
   `;
 };
 
-const getMovie = async () => {
-  const response = await fetch(URL);
+const getMovie = async (url) => {
+  const response = await fetch(url);
   const data = await response.json();
   const movieData = data.results;
   showMovie(movieData);
   console.log(movieData);
 };
 
-getMovie();
+getMovie(URL);
 
 const showMovie = (movieData) => {
   cards.innerHTML = '';
