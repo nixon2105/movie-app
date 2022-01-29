@@ -10,7 +10,8 @@ body {
   font-size: 16px;
   padding: 0;
   margin: 0;
-  background-image: url('../img/bg.jpg');
+  background-image: linear-gradient(rgba(0, 8, 51, 0.9), rgba(0, 8, 51, 0.9)),
+    url('../img/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -28,7 +29,7 @@ body {
 
 .header {
   height: 134px;
-  background-color: rgba(35, 90, 192, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
   padding: 10px 0;
 }
 
@@ -48,7 +49,7 @@ body {
   align-items: center;
   margin-top: 50px;
   transform: translate(-50%, -50%);
-  background: #1a067c;
+  background: rgba(22, 19, 55, 0.6);
   height: 50px;
   border-radius: 50px;
   padding: 10px;
@@ -72,7 +73,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #3b6b9a;
+  background: #58629b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,29 +123,39 @@ input:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
-  background-color: #fff;
+  width: 260px;
+  color: #fff;
+  background-color: rgb(193 196 217 / 60%);
+
   border-radius: 20px;
+  cursor: pointer;
+  transition: ease all 0.4s;
+}
+
+.card-item:hover {
+  transform: scale(1.1);
 }
 .card-item img {
-  width: 300px;
-  height: 400px;
+  width: 260px;
+  height: 350px;
 }
 
 .card__name {
   padding: 10px 0;
   font-size: 18px;
+  font-family: 'Poppins' serif;
 }
 .card__year {
   padding: 10px 0;
 }
 .card__rating {
   padding-bottom: 5px;
+  font-weight: bold;
 }
 
 .footer {
   font-size: 20px;
-  background-color: rgba(35, 90, 192, 0.9);
+  background-color: rgba(255, 255, 255, 0.2);
   height: 70px;
 }
 

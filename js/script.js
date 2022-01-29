@@ -25,7 +25,7 @@ const getMovie = async () => {
   const data = await response.json();
   const movieData = data.results;
   console.log(movieData);
-  movieData.map((element) => {
+  movieData.slice(0, 8).map((element) => {
     cards.innerHTML += createTemplate(element);
   });
 };
