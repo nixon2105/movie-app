@@ -92,7 +92,7 @@ input:focus {
   transition: ease all 0.3s;
 }
 
-.search-txt {
+.search-request {
   border: none;
   background: none;
   outline: none;
