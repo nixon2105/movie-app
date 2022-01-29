@@ -38,7 +38,6 @@ const getMovie = async (url) => {
   const data = await response.json();
   const movieData = data.results;
   showMovie(movieData);
-  console.log(movieData);
 };
 
 getMovie(URL);
@@ -50,30 +49,22 @@ const showMovie = (movieData) => {
   });
 };
 
-btnSearch.addEventListener('click', (e) => {
+const searchMovie = (e) => {
   e.preventDefault();
 
   const value = inputSearch.value.trim();
-  console.log(value);
 
   if (value) {
     getMovie(URL_SEARCH + '&query=' + value);
   }
 
   inputSearch.value = '';
-});
+};
 
 clearSearch.addEventListener('click', (e) => {
   e.preventDefault();
   inputSearch.value = '';
 });
 
-// searchForm.addEventListener('submit', event => {
-//   event.preventDefault();
-//   const value = searchFormInput.value.trim();
-//   if(value) {
-//       tvShows.append(loading);
-//       dbService.getSearchResult(value).then(renderCard);
-//   }
-//   searchFormInput.value = '';
-// })
+btnSearch.addEventListener('click', searchMovie);
+search.addEventListener('submit', searchMovie);
