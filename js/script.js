@@ -14,8 +14,13 @@ const createTemplate = (movieData) => {
                   API_IMG + movieData.poster_path
                 }" alt="" />
               </div>
-              <div class="card__year">Release: ${movieData.release_date}</div>
-              <div class="card__rating">${movieData.vote_average}</div>
+              <div class="card__year">Release: ${movieData.release_date.slice(
+                0,
+                4
+              )} year</div>
+              <div class="card__rating"> <img src="./img/stars.svg" alt="stars">${
+                movieData.vote_average
+              }</div>
             </div>
   `;
 };
