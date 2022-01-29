@@ -126,6 +126,11 @@ input:focus {
   background-color: #fff;
   border-radius: 20px;
 }
+.card-item img {
+  width: 300px;
+  height: 400px;
+}
+
 .card__name {
   padding: 10px 0;
   font-size: 18px;

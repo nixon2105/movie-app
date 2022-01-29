@@ -1,27 +1,29 @@
+const API_KEY = 'api_key=11a9e127bc9b30c53ac934c29e209fea';
+const URL_BASE = 'https://api.themoviedb.org/3';
+const API_IMG = 'https://image.tmdb.org/t/p/w500';
+const URL = URL_BASE + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+
 const cards = document.querySelector('.cards');
 
 const createTemplate = (movieData) => {
   return `
             <div class="card-item">
-              <div class="card__name">${movieData.Title}</div>
+              <div class="card__name">${movieData.title}</div>
               <div class="card__poster">
-                <img src="${movieData.Poster}" alt="" />
+                <img class="poster-img" src="${
+                  API_IMG + movieData.poster_path
+                }" alt="" />
               </div>
-              <div class="card__year">${movieData.Year}</div>
-              <div class="card__rating">${movieData.Type}</div>
+              <div class="card__year">Release: ${movieData.release_date}</div>
+              <div class="card__rating">${movieData.vote_average}</div>
             </div>
   `;
 };
 
-//https://api.themoviedb.org/3/movie/550?api_key=11a9e127bc9b30c53ac934c29e209fea
-
-const API_KEY = '86bf43e';
 const getMovie = async () => {
-  const url = `https://www.omdbapi.com/?s=marvel&apikey=${API_KEY}`;
-
-  const response = await fetch(url);
+  const response = await fetch(URL);
   const data = await response.json();
-  const movieData = data.Search;
+  const movieData = data.results;
   console.log(movieData);
   movieData.map((element) => {
     cards.innerHTML += createTemplate(element);
@@ -29,5 +31,3 @@ const getMovie = async () => {
 };
 
 getMovie();
-
-// const movieData = getMovie().then((movie) => movie.Search);
